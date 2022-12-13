@@ -12,7 +12,7 @@ using event_consumer.Models;
 namespace eventconsumer.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20221209063928_ApplicationContextMigration")]
+    [Migration("20221213041023_ApplicationContextMigration")]
     partial class ApplicationContextMigration
     {
         /// <inheritdoc />
@@ -27,20 +27,19 @@ namespace eventconsumer.Migrations
 
             modelBuilder.Entity("event_consumer.Models.Analytics", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("Service")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("TimeStamp")
+                    b.Property<DateTime?>("TimeStamp")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<long>("UserId")
+                    b.Property<long?>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");

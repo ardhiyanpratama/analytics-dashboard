@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace event_consumer.Models
+namespace analytics_dashboard.Models
 {
 	public class Analytics
 	{
